@@ -19,7 +19,9 @@
     "koa-res": "^3.1.1",
     "koa-router": "^7.4.0",
     "koa-simple-router": "^0.2.0",
-    "mongoose": "^5.5.5"
+    "mongoose": "^5.5.5",
+    "mongoose-createdat-updatedat": "^1.1.0",
+    "mongoose-timestamp": "^0.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.0",
