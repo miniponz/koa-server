@@ -27,7 +27,10 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node server.js",
+    "test": "jest --verbose",
+    "test:watch": "npm run test -- --watch",
+    "start:watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
