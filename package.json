@@ -4,12 +4,15 @@
   "description": "using a new framework",
   "main": "index.js",
   "dependencies": {
+    "bluebird": "^3.5.4",
     "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "koa": "^2.7.0",
     "koa-ejs": "^4.2.0",
     "koa-json": "^2.0.2",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.5.5"
   },
   "devDependencies": {
     "nodemon": "^1.19.0",
