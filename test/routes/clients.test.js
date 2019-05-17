@@ -1,8 +1,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const request = require('supertest');
-const connect = require('../lib/utils/connect');
-const app = require('../lib/app');
+const connect = require('../../lib/utils/connect');
+const app = require('../../lib/app');
 // const Client = require('../lib/models/Client');
 
 describe('client routes', () => {
@@ -19,7 +19,7 @@ describe('client routes', () => {
   });
 
   it('posts a client', () => {
-    return request(app)
+    return request(app.callback())
       .post('/api/v1/clients')
       .send({
         name: {
@@ -44,7 +44,8 @@ describe('client routes', () => {
         notes: 'this client is an elephant'
       })
       .then(res => {
-        expect(res.body).toEqual({
+        expect(res.body.data).toEqual({
+          __v: 0,
           name: {
             first: 'Caroline',
             middle: 'J.',
@@ -58,7 +59,7 @@ describe('client routes', () => {
             zip: '97703'
           },
           telephone: [{
-            _id: expect.any(mongoose.Types.ObjectId),
+            _id: expect.any(String),
             number: 5415551212,
             phoneType: 'cell',
             safe: true
@@ -66,8 +67,8 @@ describe('client routes', () => {
           email: 'client@blah.net',
           matters: [],
           referredBy: 'your mom',
-          notes: 'super heady brah',
-          _id: expect.any(mongoose.Types.ObjectId)
+          notes: 'this client is an elephant',
+          _id: expect.any(String)
         });
       });
   });
